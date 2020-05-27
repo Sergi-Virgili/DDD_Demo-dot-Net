@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snack.Logic", "Snack.Logic\Snack.Logic.csproj", "{2A6518C5-A181-43DE-BE2A-04706F3963A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snack.Logic.UnitTest", "Snack.Logic.UnitTest\Snack.Logic.UnitTest.csproj", "{BCC5FD2A-CAE2-401C-B885-38E4C2D54C42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{2A6518C5-A181-43DE-BE2A-04706F3963A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A6518C5-A181-43DE-BE2A-04706F3963A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A6518C5-A181-43DE-BE2A-04706F3963A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCC5FD2A-CAE2-401C-B885-38E4C2D54C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCC5FD2A-CAE2-401C-B885-38E4C2D54C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCC5FD2A-CAE2-401C-B885-38E4C2D54C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCC5FD2A-CAE2-401C-B885-38E4C2D54C42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
