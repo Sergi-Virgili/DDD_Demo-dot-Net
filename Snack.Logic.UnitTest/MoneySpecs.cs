@@ -42,5 +42,32 @@ namespace Snack.Logic.UnitTest
             dollar.Should().NotBe(hundredCent);
             dollar.GetHashCode().Should().NotBe(hundredCent.GetHashCode());
         }
+
+        [Theory]
+        [InlineData(-1, 0, 0, 0, 0, 0)]
+        [InlineData(0, -2, 0, 0, 0, 0)]
+        [InlineData(0, 0, -3, 0, 0, 0)]
+        [InlineData(0, 0, 0, -4, 0, 0)]
+        [InlineData(0, 0, 0, 0, -5, 0)]
+        [InlineData(0, 0, 0, 0, 0, -6)]
+
+        public void Can_not_create_money_with_negative_value(
+            int oneCentCount,
+            int tenCentCount,
+            int quarterCount,
+            int oneDollarCount,
+            int fiveDollarCount,
+            int twentyDollarCount)
+        {
+            Action action = () => new Money(
+             oneCentCount,
+             tenCentCount,
+             quarterCount,
+             oneDollarCount,
+             fiveDollarCount,
+             twentyDollarCount);
+
+            action.Should().Throw<InvalidOperationException>();
+        }
     }
 }
