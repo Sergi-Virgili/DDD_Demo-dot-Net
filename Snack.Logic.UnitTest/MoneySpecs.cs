@@ -32,5 +32,15 @@ namespace Snack.Logic.UnitTest
             money1.Should().Be(money2);
             money1.GetHashCode().Should().Be(money2.GetHashCode());
         }
+
+        [Fact]
+        public void Two_money_instances_do_not_equal_if_contains_diferent_money_amount()
+        {
+            Money dollar = new Money(0, 0, 0, 1, 0, 0);
+            Money hundredCent = new Money(100, 0, 0, 0, 0, 0);
+
+            dollar.Should().NotBe(hundredCent);
+            dollar.GetHashCode().Should().NotBe(hundredCent.GetHashCode());
+        }
     }
 }
