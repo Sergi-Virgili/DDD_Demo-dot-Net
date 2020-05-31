@@ -115,5 +115,18 @@ namespace Snack.Logic.UnitTest
             result.TwentyDollarCount.Should().Be(4);
         }
 
+        [Fact]
+        public void Can_not_substrat_monre_than_exists()
+        {
+            Money money1 = new Money(0, 1, 0, 0, 0, 0);
+            Money money2 = new Money(1, 0, 0, 0, 0, 0);
+
+            Action action = () =>
+            {
+                Money money = money1 - money2;
+            };
+
+            action.Should().Throw<InvalidOperationException>();
+        }
     }
 }
