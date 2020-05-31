@@ -69,5 +69,35 @@ namespace Snack.Logic.UnitTest
 
             action.Should().Throw<InvalidOperationException>();
         }
+
+        [Theory]
+        [InlineData(0, 0, 0, 0, 0, 0, 0)]
+        [InlineData(1, 0, 0, 0, 0, 0, 0.01)]
+        [InlineData(1, 2, 0, 0, 0, 0, 0.21)]
+        [InlineData(1, 2, 3, 0, 0, 0, 0.96)]
+        [InlineData(1, 2, 3, 4, 0, 0, 4.96)]
+        [InlineData(1, 2, 3, 4, 5, 0, 29.96)]
+        [InlineData(1, 2, 3, 4, 5, 6, 149.96)]
+
+        public void Amount_is_calculated_coorectly(
+            int oneCentCount,
+            int tenCentCount,
+            int quarterCount,
+            int oneDollarCount,
+            int fiveDollarCount,
+            int twentyDollarCount,
+            decimal expectedAmount)
+        {
+            Money money =  new Money(
+                oneCentCount,
+                tenCentCount,
+                quarterCount,
+                oneDollarCount,
+                fiveDollarCount,
+                twentyDollarCount);
+
+            money.Amount.Should().Be(expectedAmount);
+         }
+
     }
 }
