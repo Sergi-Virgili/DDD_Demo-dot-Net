@@ -99,5 +99,21 @@ namespace Snack.Logic.UnitTest
             money.Amount.Should().Be(expectedAmount);
          }
 
+        [Fact]
+        public void Subtract_moneys_produces_correct_results()
+        {
+            Money money1 = new Money(10, 10, 10, 10, 10, 10);
+            Money money2 = new Money(1, 2, 3, 4, 5, 6);
+
+            Money result = money1 - money2;
+
+            result.OneCentCount.Should().Be(9);
+            result.TenCentCount.Should().Be(8);
+            result.QuarterCount.Should().Be(7);
+            result.OneDollarCount.Should().Be(6);
+            result.FiveDollarCount.Should().Be(5);
+            result.TwentyDollarCount.Should().Be(4);
+        }
+
     }
 }
